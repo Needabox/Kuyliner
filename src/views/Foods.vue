@@ -44,13 +44,13 @@ export default {
             this.products = data;
         },
         searchFood(){
-            axios.get("http://localhost:3000/products?q="+this.search)
+            axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/products?q="+this.search)
             .then((response) => this.setProducts(response.data))
             .catch((error) => console.log(error))
         }
     },
     mounted(){
-        axios.get("http://localhost:3000/products")
+        axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/products")
         .then((response) => this.setProducts(response.data))
         .catch((error) => console.log(error))
     }

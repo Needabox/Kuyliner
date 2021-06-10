@@ -107,7 +107,20 @@
       "gambar": "lontong-opor-ayam.jpg"
     }
   ],
-  "keranjangs": [],
+  "keranjangs": [
+    {
+      "order_qty": "1",
+      "products": {
+        "id": 1,
+        "kode": "K-01",
+        "nama": "Sate Ayam",
+        "harga": 16000,
+        "is_ready": true,
+        "gambar": "sate-ayam.jpg"
+      },
+      "id": 1
+    }
+  ],
   "pesanans": [
     {
       "name": "Rafli",
