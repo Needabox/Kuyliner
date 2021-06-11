@@ -59,7 +59,7 @@ export default {
     },
   },
   mounted(){
-    axios.get("http://localhost:3000/keranjangs")
+    axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/keranjangs")
       .then((response) => this.setQty(response.data))
       .catch((error) => console.log(error))
   }

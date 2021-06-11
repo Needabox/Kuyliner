@@ -81,7 +81,7 @@ export default {
         }
     },
     mounted() {
-        axios.get("http://localhost:3000/products/"+ this.$route.params.id)
+        axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/products/"+ this.$route.params.id)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log(error))
     },

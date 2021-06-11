@@ -29,7 +29,7 @@
                     <tr class="hover:bg-gray-200">
                         <td class="py-5 px-8 text-gray-900" >{{ index + 1}}</td>
                         <td class="py-5 px-8 text-gray-900" >
-                            <img class="w-full md:w-1/6" :src="require(`../assets/images/${cart.products.gambar}`)" alt="Image Food">
+                            <img class="w-full md:w-2/12" :src="require(`../assets/images/${cart.products.gambar}`)" alt="Image Food">
                         </td>
                         <td class="py-5 px-8 text-gray-900">{{ cart.products.nama }}</td>
                         <td class="py-5 px-8 text-gray-900">{{ cart.order_qty }}</td>
