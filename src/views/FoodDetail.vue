@@ -9,7 +9,7 @@
         </ol>
     </nav>
         <div class="grid grid-cols-1 md:grid-cols-2 p-3 m-4 px-0 md:px-20 mb-32">
-            <div class="image w-11/12">
+            <div class="image w-11/12 ml-0 md:ml-3">
                 <img :src="`https://raw.githubusercontent.com/rafli-dev/Kuyliner/main/src/assets/images/${product.gambar}`" alt="food order detail">
             </div>
             <div class="shadow-lg px-5 py-5 mt-4 md:-mt-4">
