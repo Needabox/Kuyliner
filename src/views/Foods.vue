@@ -13,11 +13,16 @@
         </div>
     </div>
     <!-- Card Product -->
+    <div v-if="loading">
+        <Pulse />
+    </div>
+    <div v-if="!loading">
         <div class="holder mx-auto w-10/12 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 -mt-10">
             <div v-for="product in products" :key="product.id">
             <Card :product="product" />
             </div>
         </div>
+    </div>
     <!-- End of Card Product -->
     <Footer />
 </template>
@@ -26,16 +31,35 @@
 import Card from '../components/CardProduct.vue'
 import Footer from '../components/Footer.vue'
 import axios from 'axios'
+import Pulse from '../components/pulse.vue'
+import { onMounted, ref } from 'vue';
 
 export default {
     name: 'Foods',
     components: {
         Card,
         Footer,
+        Pulse,
+    },
+    setup() {
+        const loading = ref(false);
+        const products = ref([]);
+
+        onMounted(async () => {
+            loading.value = true;
+                const response = await axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/products");
+            products.value = response.data;
+            loading.value = false;
+
+        })
+
+        return {
+            loading,
+            products,
+        }
     },
     data(){
         return{
-            products: [],
             search: '',
         }
     },
@@ -49,10 +73,10 @@ export default {
             .catch((error) => console.log(error))
         }
     },
-    mounted(){
-        axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/products")
-        .then((response) => this.setProducts(response.data))
-        .catch((error) => console.log(error))
+        mounted(){
+            axios.get("https://my-json-server.typicode.com/rafli-dev/Kuyliner/products")
+            .then((response) => this.setProducts(response.data))
+            .catch((error) => console.log(error))
     }
 }
 </script>
